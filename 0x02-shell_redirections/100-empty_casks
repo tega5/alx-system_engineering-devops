@@ -1,2 +1,2 @@
 #!/bin/bash
-find . \( -type d -empty -printf "%f\n" \) -o \( -type f -empty -printf "%f\n" \) -exec printf "\n" \;
+find . -empty -type f -o -empty -type d -execdir printf "%f\n" {} \; && echo
